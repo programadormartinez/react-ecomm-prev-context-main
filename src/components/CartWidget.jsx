@@ -5,7 +5,6 @@ import { CartContext } from "./CartContext";
 
 const CartWidget = () => {
     const test = useContext(CartContext);
-    console.log(test.cartList.length);
     return (
         <Badge badgeContent={test.cartList.length} color="secondary">
             <ShoppingCartOutlined />

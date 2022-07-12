@@ -21,7 +21,12 @@ const CartContextProvider = ({children}) => {
 
     const deletedProduct = (id) => {
         const filtredData = cartList.filter(item => item.id !== id);
-        setCartList(filtredData);
+        let costProduct = 0;
+        filtredData.map(elem => {
+            costProduct += elem.cost * elem.qty;  
+        });
+        setCostTotal(costProduct);
+        setCartList(filtredData, {costProduct });
     }
 
     return(
